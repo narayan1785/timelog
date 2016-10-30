@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timelog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+ <div class='row'>
+   <div class='col-md-8'>
+   </div>
+   <div class="col-md-2 login-ctrl">
+		<% if current_user %>
+		  Welcome <%= current_user.username %> | 
+		  <%= link_to 'Log Out', log_out_path %>
+		<%else%>
+		  <%= link_to "Sing In", root_path %>
+		<%end%>
+   </div>
+ </div>
+</div>
+</header>
+
+<% flash.each do |name, msg| %>
+ <% notice_type = name.eql?('notice') ? 'success' : 'danger' %>
+  <div  class="alert alert-<%= notice_type%>">
+    <%= content_tag :div , msg , id: "flash_#{name}" %>
+  </div>
+<%end%>
+
+<div class="container">
+<%= yield %>
+</div>
+<footer></footer>
+</body>
+</html>

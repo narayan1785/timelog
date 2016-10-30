@@ -1,0 +1,72 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
+body {
+  background-color: #eee;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-control {
+  position: relative;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.container
+{
+	height: 560px;
+}
+
+
+header {
+    background-color: grey;
+    min-height: 50px;
+    width: 100%;
+}
+
+footer {
+    background-color: grey;
+    min-height: 30px;
+    width: 100%;
+}
+
+table {
+  width: 60% !important;
+}
+
+tr.late {
+  color: red;
+}
+
+#disp-late{
+  border: 1px solid;
+  border-radius: 7px;
+  padding: 2px 5px 2px 5px;
+}
+
+#disp-in{
+  border: 1px solid;
+  border-radius: 7px;
+  color: green;
+  padding: 2px 5px 2px 5px;
+}

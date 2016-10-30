@@ -1,0 +1,26 @@
+<h2>Welcome to dashboard , <%= current_user.username %> </h2>
+
+<%= link_to	 arrival_stats_dashboards_path, class: "btn btn-lg" do %>
+  <span class="glyphicon glyphicon-align-left" aria-hidden="true">
+    Statistics
+  </span>
+<%end%>
+
+<table class="table table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Arrival Time  <span class="glyphicon glyphicon-time" aria-hidden="true"> </th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @time_entries.each do |entry| %>
+      <tr class="<%= late_entry(entry)%>">
+        <td><%= entry.user.username %> <span id="disp-<%= late_entry(entry)%>"> <%= late_entry(entry).capitalize %> </span></td>
+        <td><%= entry.signin_time.localtime.strftime("%r") %></td>
+        <td><%= entry.signin_time.localtime.strftime("%b %d, %Y") %></td>
+      </tr>
+      <%end%>
+    </tbody>
+  </table>
